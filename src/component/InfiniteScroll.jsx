@@ -8,7 +8,7 @@ const InfiniteScroll = () => {
     const [items, setItems] = useState([]);
     const [page, setPage] = useState(1);
 
-
+    console.log(items, page)
     const fetchCityData = async () => {
         setIsLoading(true);
         setError(null);
@@ -38,7 +38,7 @@ const InfiniteScroll = () => {
     },)
 
     return (
-         <>
+        <>
             {isLoading && <p>Loading...</p>}
             {error && <p>Error: {error.message}</p>}
         </>

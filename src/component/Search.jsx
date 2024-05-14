@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import List from './List';
-import { useNavigate } from 'react-router-dom';
 import Main from '../weather/Main'
 
 
@@ -10,16 +9,12 @@ const Search = ({ list }) => {
     const [inputValue, setInputValue] = useState('');
     const [filteredSuggestions, setFilteredSuggestions] = useState([]);
 
-    const [cities, setCities] = useState([]);
     const [searchTerm, setSearchTerm] = useState('');
     const [showWeatherPage, setShowWeatherPage] = useState(false);
-    const navigate = useNavigate()
 
     const handleSearch = (e) => {
         setSearchTerm(e.target.value);
         console.log(searchTerm);
-        const inputValue = e.target.value;
-        setInputValue(inputValue);
         const filteredSuggestions = list.filter(suggestion =>
             suggestion.name.toLowerCase().includes(inputValue.toLowerCase())
         );
