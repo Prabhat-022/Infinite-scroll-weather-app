@@ -3,7 +3,7 @@ import Header from './component/Header';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 // import Weatherpage from './component/Weatherpage';
 import Main from '././weather/Main'
-import GeoLocation from './weather/GeoLocation';
+// import GeoLocation from './weather/GeoLocation';
 
 
 function App() {
@@ -21,10 +21,10 @@ function App() {
       path: 'weather/:country',
       element: <Main />
     },
-    {
-      path: 'map',
-      element: <GeoLocation />
-    }
+    // {
+    //   path: 'map',
+    //   element: <GeoLocation />
+    // }
   ])
   return (
     <div className="bg-gray-700 text-white flex flex-col items-center justify-center ">
