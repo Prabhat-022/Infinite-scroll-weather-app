@@ -42,7 +42,7 @@ const Inputs = ({ setquery, units, setunits }) => {
                     onChange={(e) => setcity(e.target.value)}
                     type='text'
                     placeholder='search for city......'
-                    className='text-xl font-light p-2 shadow-xl focus:outline-none capitalize placeholder:lowercase text-black'
+                    className='text-xl font-light p-2 shadow-xl focus:outline-none capitalize placeholder:lowercase text-white bg-transparent'
                 />
             </div>
 

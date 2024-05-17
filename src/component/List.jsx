@@ -7,7 +7,7 @@ const List = ({ city, i }) => {
     return (
         <div>
               
-                <tr class="" key={i}>
+                <tr class="mr-10" key={i}>
 
                     <td className=" cursor-pointer px-4 py-2 font-bold  ">
                         {i + 1}

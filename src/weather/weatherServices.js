@@ -5,33 +5,35 @@
 import { DateTime } from "luxon";
 
 const BASE_URL = "http://api.openweathermap.org/data/2.5"
-const API_KEY = "e596278d4095aa9dc0e0ad6b02e9e8e0";
+// const API_KEYS = process.env.API_KEY;
+const API_KEYS ='e596278d4095aa9dc0e0ad6b02e9e8e0'
 
+console.log(process.env.API_KEY)
 
 const getWeatherData = (infoType, searchParams) => {
 
     const url = new URL(BASE_URL + "/" + infoType);
-    url.search = new URLSearchParams({ ...searchParams, appid: API_KEY });
+    url.search = new URLSearchParams({ ...searchParams, appid: API_KEYS });
 
     console.log(url);
 
     return fetch(url)
         .then((res) => res.json())
         .then((data) => (data));
-    // console.log(data)
 
+    // console.log(data)
 }
+
 const formetCurrentWeather = (data) => {
 
-    console.log("current",data);
-     
-    if (!data.coord) {
-        console.error("Coord data is undefined");
-        return null; // or handle the error appropriately
+    console.log("current", data);
+
+    if (!data || !data.coord) {
+        console.error("Data is undefined or Coord data is missing");
+        return null; // Handle the error appropriately
     }
 
-
-    console.log("coord", data.coord.lat)
+    // console.log("coord", data.coord.lat)
     const {
         coord: { lat, lon },
         main: { temp, feels_like, temp_min, temp_max, humidity },
@@ -97,7 +99,7 @@ const formatForecastWeather = (data) => {
     const timezone = data.city.timezone;
 
     // Extract daily data from the 'list'
- 
+
     // Extract hourly data from the 'list'
     const hourly = list.slice(1, 6).map(d => {
         return {
@@ -112,7 +114,7 @@ const formatForecastWeather = (data) => {
             // temp: d.dt_txt.day,
             temp: d.main.temp,
             icon: d.weather[0].icon
-        }; 
+        };
     });
 
 

@@ -6,6 +6,9 @@ import TemperatureandDetails from './TemperatureandDetails'
 import Forecast from './Forecast'
 import getformattedWeatherData from './weatherServices'
 import { useLocation } from 'react-router-dom';
+import Header from '../component/Header';
+import bcgimg from '../assets/bcg_img.png'
+
 
 const Main = () => {
   const location = useLocation();
@@ -44,14 +47,11 @@ const Main = () => {
   return (
     <>
       <div className="" >
-
-        <div class="text-center mt-1 mb-8 h-20">
-          <h1 className='text-3xl font-bold pt-4'>World Weather Forecast</h1>
-          <p class="">Infinite scroll - Weather Forecast Web Application</p>
-        </div>
+        <Header />
 
       </div>
-      <div className={`'mx-auto max-w-screen-md mt-4 py-5 px-32 bg-gradient-to-br from-cyan-700 to-blue-700 h-fit shadow-xl shadow-gray-400' ${changeBackgroundColor()}`}>
+
+      <div className={`'mx-auto max-w-screen-md mt-4 py-5 px-32 bg-gradient-to-br from-cyan-700 to-blue-700 h-fit shadow-xl shadow-gray-400' ${changeBackgroundColor()} `} style={{ backgroundImage: `url(${bcgimg})` }} >
         <TopButton setquery={setquery} />
         <Inputs setquery={setquery} units={units} setunits={setunits} />
         {weather && (

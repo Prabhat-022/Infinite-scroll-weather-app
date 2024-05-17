@@ -42,7 +42,7 @@ const Search = ({ list }) => {
 
     return (
         <div>
-            <input type="text" placeholder="Search city, country name ..." value={searchTerm} onChange={handleSearch} class="w-full border border-gray-300 rounded-md px-4 py-2 mb-4 text-black" />
+            <input type="text" placeholder="Search city, country name ..." value={searchTerm} onChange={handleSearch} class=" w-[95vw] border border-gray-300 rounded-md px-4 py-2 mb-4 text-white bg-transparent ml-4" />
 
             {/* <Autocomplete suggestions={list} /> */}
 
@@ -56,8 +56,8 @@ const Search = ({ list }) => {
             </ul>
 
             {/* Autosuggestion popup model start =================================================================================================== */}
-            <table class="">
-                <tr class="flex justify-between  bg-slate-950">
+            <table class="ml-4">
+                <tr class="flex justify-between  bg-slate-950 mr-5">
                     <th class="px-4 py-2 font-bold">NO.</th>
                     <th class="px-4 py-2 font-bold">City</th>
                     <th class="px-4 py-2 font-bold">Country</th>
@@ -81,6 +81,7 @@ const Search = ({ list }) => {
                 ))}
 
             </table>
+
         </div>
 
     );

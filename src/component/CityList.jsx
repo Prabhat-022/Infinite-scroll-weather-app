@@ -25,7 +25,7 @@ const CityList = () => {
 
     return (
         <>
-            <p class="text-center font-bold mb-4">Country and city List</p>
+            <p class="text-center font-bold mb-3 mt-4">Country and city List</p>
 
                     <Search list={list} />
         </>
